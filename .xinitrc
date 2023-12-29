@@ -3,7 +3,7 @@ xrandr --screen 0 -s widhtxheight
 
 # Statusbar loop
 while true; do
-   xsetroot -name "$( date +"%F %T" )"
+   xsetroot -name "$(acpi -b) $(echo " | ") $( date +"%F %T" )"
    sleep 1s
 done &
 
