@@ -1,6 +1,7 @@
 sleep 1s
 setxkbmap -layout LAYOUTHERE
 numlockx &
+xmodmap -e “pointer = 1 25 3 4 5 6 7 8 9”
 xrandr --screen 0 -s WIDTHxHEIGHT --dpi 96
 
 # Statusbar loop
