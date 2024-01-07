@@ -1,8 +1,7 @@
 sleep 1s
-setxkbmap -layout LAYOUTHERE
+setxkbmap -layout fi
 numlockx &
-xmodmap -e “pointer = 1 25 3 4 5 6 7 8 9”
-xrandr --screen 0 -s WIDTHxHEIGHT --dpi 96
+xrandr --screen 0 -s 1920x1080 --dpi 96
 
 # Statusbar loop
 while true; do
@@ -10,10 +9,17 @@ while true; do
    sleep 1s
 done &
 
+# Disable middle-mouse paste
+while true; do
+    xsel -fin </dev/null
+done &
+
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
 /usr/bin/wireplumber &
+
 dunst &
+
 picom -b
 ./.fehbg
 gummy start
