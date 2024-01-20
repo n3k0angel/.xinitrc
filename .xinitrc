@@ -22,6 +22,5 @@ dunst &
 
 picom -b
 ./.fehbg
-gummy start
 brightnessctl -q set 50%
 exec dwm
