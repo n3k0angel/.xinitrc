@@ -20,7 +20,7 @@ done &
 
 dunst &
 
-picom -b
+compfy -b
 ./.fehbg
 brightnessctl -q set 50%
 exec dwm
