@@ -1,7 +1,7 @@
 sleep 1s
 setxkbmap -layout fi
 numlockx &
-xrandr --screen 0 -s 1920x1080 --dpi 96
+xrandr -s 1920x1080 --dpi 96
 
 # Statusbar loop
 while true; do
@@ -15,8 +15,11 @@ while true; do
 done &
 
 /usr/bin/pipewire &
+sleep 2
 /usr/bin/pipewire-pulse &
+sleep 2
 /usr/bin/wireplumber &
+sleep 2
 
 dunst &
 
