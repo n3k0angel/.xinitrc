@@ -23,6 +23,9 @@ sleep 2
 
 dunst &
 
+# Darkmode for GTK stuff
+export GTK_THEME=Adwaita:dark
+
 compfy -b
 ./.fehbg
 brightnessctl -q set 50%
