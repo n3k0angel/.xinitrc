@@ -3,9 +3,18 @@ setxkbmap -layout fi
 numlockx &
 xrandr -s 1920x1080 --dpi 96
 
+
+
+SPACE=$( echo " | " )
+
 # Statusbar loop
 while true; do
-   xsetroot -name "$( brightnessctl info | grep "Current" | sed 's/Current brightness/B/g' ) $( echo " | " ) $( acpi -b ) $( echo " | " ) $( date +"%F %T" )"
+
+  BRIGHTNESS="$( brightnessctl info | grep "Current" | sed '0,/(/ s/^.*(/(/' )"
+  BATTERY="$( acpi -b )"
+  DATETIME="$( date +"%F %T" )"
+
+   xsetroot -name "$BRIGHTNESS $SPACE $BATTERY $SPACE $DATETIME"
    sleep 1s
 done &
 
@@ -23,10 +32,9 @@ sleep 2
 
 dunst &
 
-# Darkmode for GTK stuff
 export GTK_THEME=Adwaita:dark
-
 compfy -b
 ./.fehbg
 brightnessctl -q set 50%
+
 exec dwm
