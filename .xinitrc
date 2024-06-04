@@ -33,7 +33,7 @@ sleep 2
 dunst &
 
 export GTK_THEME=Adwaita:dark
-compfy -b
+picom -b
 ./.fehbg
 brightnessctl -q set 50%
 
