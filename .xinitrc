@@ -34,7 +34,7 @@ dunst &
 
 export GTK_THEME=Adwaita:dark
 picom -b
-./.fehbg
+./.wallpaper
 brightnessctl -q set 50%
 
 exec dwm
